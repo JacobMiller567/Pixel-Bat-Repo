@@ -49,7 +49,8 @@ public class PipeSpawner : MonoBehaviour
     {
         if (heightRange < maxHeightRange)
         {
-            heightRange += 0.25f;
+            //heightRange += 0.25f;
+            heightRange += 0.2f;
         }
     }
 

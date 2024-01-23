@@ -116,20 +116,13 @@ namespace Crystal
                 Destroy (gameObject);
             }
 
-            //Refresh ();
+            Refresh ();
             StartCoroutine(RefreshCoroutine());
         }
         private void OnEnable()
         {
             StartCoroutine(RefreshCoroutine());
         }
-
-/*
-        void Update () // Since game is always in portrait mode there is no need to constantly check every frame
-        {
-            Refresh ();
-        }
-*/
 
         private IEnumerator RefreshCoroutine()
         {

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Configuration;
 
 public class Score : MonoBehaviour
 {
@@ -53,6 +54,64 @@ public class Score : MonoBehaviour
         gameOverScoreText.text = score.ToString();
         UpdateHighScore();
 
+        if (score == 30)
+        {
+            PipeSpawner.instance.IncreaseDifficulty();
+        }
+        if (score == 50)
+        {
+            PipeSpawner.instance.ChangePipeColor();
+            //Bronze Medal
+            medals[1].SetActive(true);
+            medals[0].SetActive(false);
+            trophyText.text = "Bronze";
+        }
+        if (score == 100)
+        {
+            PipeSpawner.instance.IncreaseDifficulty();
+        }
+        if (score == 150)
+        {
+            PipeSpawner.instance.ChangePipeColor();
+            //Silver Medal
+            medals[2].SetActive(true);
+            medals[1].SetActive(false);
+            trophyText.text = "Silver";
+        }
+        if (score == 200)
+        {
+            PipeSpawner.instance.IncreaseDifficulty();
+        }
+        if (score == 300)
+        {
+            PipeSpawner.instance.IncreaseDifficulty();
+            //Gold Medal
+            medals[3].SetActive(true);
+            medals[2].SetActive(false);
+            trophyText.text = "Gold";
+        }
+        if (score == 500)
+        {
+            PipeSpawner.instance.IncreaseDifficulty();
+            PipeSpawner.instance.ChangePipeColor();
+            //Ruby Medal
+            medals[4].SetActive(true);
+            medals[3].SetActive(false);
+            trophyText.text = "Ruby";
+        }
+        if (score == 750)
+        {
+            // Change ground sprite??
+        }
+        if (score == 1000)
+        {
+            //Rainbow Medal
+            medals[5].SetActive(true);
+            medals[4].SetActive(false);
+            trophyText.text = "Rainbow";
+        }
+
+        /*
         if (score == 50)
         {
             PipeSpawner.instance.IncreaseDifficulty();
@@ -101,6 +160,7 @@ public class Score : MonoBehaviour
             medals[4].SetActive(false);
             trophyText.text = "Rainbow";
         }
+        */
     }
 
     public int GetCurrentScore()
