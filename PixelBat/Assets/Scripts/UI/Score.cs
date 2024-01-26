@@ -14,8 +14,7 @@ public class Score : MonoBehaviour
     [SerializeField] private TextMeshProUGUI gameOverHighScoreText;
     [SerializeField] private GameObject[] medals;
     [SerializeField] private TextMeshProUGUI trophyText;
-
-
+    [SerializeField] private AudioSource trophyAudio;
 
     private int score = 0;
 
@@ -65,6 +64,7 @@ public class Score : MonoBehaviour
             medals[1].SetActive(true);
             medals[0].SetActive(false);
             trophyText.text = "Bronze";
+            trophyAudio.Play();
         }
         if (score == 100)
         {
@@ -77,6 +77,7 @@ public class Score : MonoBehaviour
             medals[2].SetActive(true);
             medals[1].SetActive(false);
             trophyText.text = "Silver";
+            trophyAudio.Play();
         }
         if (score == 200)
         {
@@ -89,6 +90,7 @@ public class Score : MonoBehaviour
             medals[3].SetActive(true);
             medals[2].SetActive(false);
             trophyText.text = "Gold";
+            trophyAudio.Play();
         }
         if (score == 500)
         {
@@ -98,6 +100,7 @@ public class Score : MonoBehaviour
             medals[4].SetActive(true);
             medals[3].SetActive(false);
             trophyText.text = "Ruby";
+            trophyAudio.Play();
         }
         if (score == 750)
         {
@@ -109,58 +112,8 @@ public class Score : MonoBehaviour
             medals[5].SetActive(true);
             medals[4].SetActive(false);
             trophyText.text = "Rainbow";
+            trophyAudio.Play();
         }
-
-        /*
-        if (score == 50)
-        {
-            PipeSpawner.instance.IncreaseDifficulty();
-        }
-        if (score == 100)
-        {
-            PipeSpawner.instance.IncreaseDifficulty();
-            PipeSpawner.instance.ChangePipeColor();
-            //Bronze Medal
-            medals[1].SetActive(true);
-            medals[0].SetActive(false);
-            trophyText.text = "Bronze";
-        }
-        if (score == 200)
-        {
-            PipeSpawner.instance.IncreaseDifficulty();
-            //Silver Medal
-            medals[2].SetActive(true);
-            medals[1].SetActive(false);
-            trophyText.text = "Silver";
-        }
-        if (score == 300)
-        {
-            PipeSpawner.instance.ChangePipeColor();
-            //Gold Medal
-            medals[3].SetActive(true);
-            medals[2].SetActive(false);
-            trophyText.text = "Gold";
-        }
-        if (score == 400)
-        {
-            PipeSpawner.instance.IncreaseDifficulty();
-        }
-        if (score == 500)
-        {
-            //Ruby Medal
-            medals[4].SetActive(true);
-            medals[3].SetActive(false);
-            trophyText.text = "Ruby";
-        }
-        if (score == 1000)
-        {
-            PipeSpawner.instance.ChangePipeColor();
-            //Rainbow Medal
-            medals[5].SetActive(true);
-            medals[4].SetActive(false);
-            trophyText.text = "Rainbow";
-        }
-        */
     }
 
     public int GetCurrentScore()
